@@ -1,158 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!DOCTYPE html>
+    <html lang="en">
     
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</head>
-
-<body>
-
-<div class="container">
-  <h2>Loan Prediction Classification</h2>
-  
-  <form class="form-horizontal" action="{{ url_for('predict')}}" method="post">
-    <div class="form-group">
-     <div class="row">
-      <label class="control-label col-sm-2" for="gender"><b>Gender:</b></label>
-      <div class="col-sm-3">
-        <select class="form-control" name="Gender" id="gender" required="required">
-                <option value="1">Male</option>
-                <option value="2">Female</option>
-
-            </select>
-</div>
-      </div>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
     
-    <div class="form-group">
-     <div class="row">
-      <label class="control-label col-sm-2" for="married"><b>Married:</b></label>
-      <div class="col-sm-3">          
-        <select class="form-control" name="Married" id="married" required="required">
-                <option value="1">Yes</option>
-                <option value="0">No</option>
-              
-            </select>
-      </div>
-       </div>
-    </div>
-       <div class="form-group">
-        <div class="row">
-      <label class="control-label col-sm-2" for="dependents"><b>No of Dependents:</b></label>
-      <div class="col-sm-3">
-        <select class="form-control" name="Dependents" id="dependents" required="required">
-                <option value="0">0</option>
-                <option value="1">1</option>
-             <option value="2">2</option>
-             <option value="3">3 or 3+</option>
-
-            </select>
-      </div> </div>
-    </div>
-       <div class="form-group">
-        <div class="row">
-      <label class="control-label col-sm-2" for="education"><b>Education:</b></label>
-      <div class="col-sm-3">
-        <select class="form-control" name="Education" id="education" required="required">
-                <option value="1">Graduated</option>
-                <option value="0">Not Graduated</option>
-            </select>
-      </div> </div>
-    </div>
+    <body>
+    
+    <div class="container">
+      <h2>Loan Prediction Classification</h2>
+      
+      <form class="form-horizontal" action="{{ url_for('predict')}}" method="post">
         <div class="form-group">
-          <div class="row">
-      <label class="control-label col-sm-2" for="employment"><b>Self-Employment:</b></label>
-      <div class="col-sm-3">
-        <select class="form-control" name="Self_Employment" id="employment" required="required">
-                <option value="1">Yes</option>
-                <option value="0">No</option>
-            </select>
-      </div>  </div>
+         <div class="row">
+          <label class="control-label col-sm-3" for="gender"><b>Gender:</b></label>
+          <div class="col-sm-3">
+            <select class="form-control" name="Gender" id="gender" required="required">
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+    
+                </select>
     </div>
-
+          </div>
+        </div>
+        
+        <div class="form-group">
+         <div class="row">
+          <label class="control-label col-sm-3" for="married"><b>Married:</b></label>
+          <div class="col-sm-3">          
+            <select class="form-control" name="Married" id="married" required="required">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                  
+                </select>
+          </div>
+           </div>
+        </div>
+           <div class="form-group">
+            <div class="row">
+          <label class="control-label col-sm-3" for="dependents"><b>No of Dependents:</b></label>
+          <div class="col-sm-3">
+            <select class="form-control" name="Dependents" id="dependents" required="required">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                 <option value="2">2</option>
+                 <option value="3">3 or 3+</option>
+    
+                </select>
+          </div> </div>
+        </div>
+           <div class="form-group">
+            <div class="row">
+          <label class="control-label col-sm-3" for="education"><b>Education:</b></label>
+          <div class="col-sm-3">
+            <select class="form-control" name="Education" id="education" required="required">
+                    <option value="1">Graduated</option>
+                    <option value="0">Not Graduated</option>
+                </select>
+          </div> </div>
+        </div>
+            <div class="form-group">
+              <div class="row">
+          <label class="control-label col-sm-3" for="employment"><b>Self-Employment:</b></label>
+          <div class="col-sm-3">
+            <select class="form-control" name="Self_Employment" id="employment" required="required">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+          </div>  </div>
+        </div>
+    
+                  <div class="form-group">
+                    <div class="row">
+          <label class="control-label col-sm-3" for="property_area"><b>Property Area:</b></label>
+          <div class="col-sm-3">
+            <select class="form-control" name="Property_Area" id="property_area" required="required">
+                    <option value="1">Semiurban</option>
+                    <option value="2">Urban</option>
+                    <option value="3">Rual</option>
+                </select>
+          </div>  </div>
+        </div>
+    
+                  <div class="form-group">
+                    <div class="row">
+          <label class="control-label col-sm-3" for="credit_history"><b>Credit History:</b></label>
+          <div class="col-sm-3">
+            <select class="form-control" name="Credit_History" id="credit_history" required="required">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+    
+                </select>
+          </div>  </div>
+        </div>
+    
+                       <div class="form-group">
+                         <div class="row">
+          <label class="control-label col-sm-3" for="loan_amt_term"><b>Loan Amount Term in Months:</b></label>
+          <div class="col-sm-3">
+              <select class="form-control" name="Loan_amt_term" id="loan_amt_term" required="required">
+                                   <option value="12">12</option>
+                   <option value="36">36</option>
+                   <option value="60">60</option>
+                <option value="84">84</option>
+                   <option value="120">120</option>
+                <option value="180">180</option>
+                   <option value="240">240</option>
+                <option value="300">300</option>
+                <option value="360">360</option>
+                <option value="480">480</option>
+    
+                </select>
+          </div>
+        </div>  </div>
+    
               <div class="form-group">
                 <div class="row">
-      <label class="control-label col-sm-2" for="property_area"><b>Property Area:</b></label>
-      <div class="col-sm-3">
-        <select class="form-control" name="Property_Area" id="property_area" required="required">
-                <option value="1">Semiurban</option>
-                <option value="2">Urban</option>
-                <option value="3">Rual</option>
-            </select>
-      </div>  </div>
-    </div>
-
+        <label class="control-label col-sm-3" for="ApplicantIncome"><b>Applicant Annual Income (in thousands):</b></label>
+        <div class="col-sm-3">
+          <input type="number" class="form-control" name="ApplicantIncome" id="ApplicantIncome" placeholder="Enter amount">
+        </div>  </div>
+      </div>
+    
               <div class="form-group">
                 <div class="row">
-      <label class="control-label col-sm-2" for="credit_history"><b>Credit History:</b></label>
-      <div class="col-sm-3">
-        <select class="form-control" name="Credit_History" id="credit_history" required="required">
-                <option value="1">Yes</option>
-                <option value="0">No</option>
-
-            </select>
-      </div>  </div>
-    </div>
-
-                   <div class="form-group">
-                     <div class="row">
-      <label class="control-label col-sm-2" for="loan_amt_term"><b>Loan Amount Term in Months:</b></label>
-      <div class="col-sm-3">
-          <select class="form-control" name="Loan_amt_term" id="loan_amt_term" required="required">
-                               <option value="12">12</option>
-               <option value="36">36</option>
-               <option value="60">60</option>
-            <option value="84">84</option>
-               <option value="120">120</option>
-            <option value="180">180</option>
-               <option value="240">240</option>
-            <option value="300">300</option>
-            <option value="360">360</option>
-            <option value="480">480</option>
-
-            </select>
+        <label class="control-label col-sm-3" for="CoapplicantIncome"><b>Co-applicant Annual Income (in thousands):</b></label>
+        <div class="col-sm-3">
+          <input type="number" class="form-control" name="CoApplicantIncome" id="CoapplicantIncome" placeholder="Enter amount">
+        </div>  </div>
       </div>
-    </div>  </div>
-
-          <div class="form-group">
-            <div class="row">
-    <label class="control-label col-sm-2" for="ApplicantIncome"><b>Applicant Income:</b></label>
-    <div class="col-sm-3">
-      <input type="number" class="form-control" name="ApplicantIncome" id="ApplicantIncome" placeholder="Enter amount">
-    </div>  </div>
-  </div>
-
-          <div class="form-group">
-            <div class="row">
-    <label class="control-label col-sm-2" for="CoapplicantIncome"><b>Co-applicant Income:</b></label>
-    <div class="col-sm-3">
-      <input type="number" class="form-control" name="CoApplicantIncome" id="CoapplicantIncome" placeholder="Enter amount">
-    </div>  </div>
-  </div>
- <div class="form-group">
-   <div class="row">
-    <label class="control-label col-sm-2" for="loan_amount"><b>Loan Amount:</b></label>
-    <div class="col-sm-3">
-       <input type="number" class="form-control" name="loan_amt" id="loan_amount" placeholder="Enter amount">
-    </div>
+     <div class="form-group">
+       <div class="row">
+        <label class="control-label col-sm-3" for="loan_amount"><b>Loan Amount:</b></label>
+        <div class="col-sm-3">
+           <input type="number" class="form-control" name="loan_amt" id="loan_amount" placeholder="Enter amount">
+        </div>
+          </div>
       </div>
-  </div>
-
-    <div class="form-group">        
-      <div class="col-sm-offset-5">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
+    
+        <div class="form-group">        
+          <div class="col-sm-offset-5">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    
+         <br><h3>{{ prediction_text }}<h3>
+         
     </div>
-  </form>
-
-     <br><h3>{{ prediction_text }}<h3>
-</div>
-  
-</body>
-
-</html>
+      
+    </body>
+    
+    </html>
